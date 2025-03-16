@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager | Sarosh Mirza</title>
+  
+  <!-- Include Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  <!-- Include Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
+  <!-- Custom Preview Styles -->
+  <style>
+    .frame-content {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .preview-pane {
+      background-color: #f7fafc;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Custom preview templates can be added here
+    CMS.registerPreviewStyle("/css/main.css");
+    
+    // Enable editorial workflow
+    window.CMS_MANUAL_INIT = true;
+    CMS.init({
+      config: {
+        load_config_file: false,
+        backend: {
+          name: "git-gateway",
+          branch: "main",
+        },
+        publish_mode: "editorial_workflow",
+        media_folder: "site/static/img",
+        public_folder: "/img",
+        collections: [{
+          name: "blog",
+          label: "Blog",
+          folder: "site/content/post",
+          create: true,
+          slug: "{{year}}-{{month}}-{{day}}-{{slug}}",
+          preview_path: "post/{{slug}}",
+          fields: [
+            {label: "Title", name: "title", widget: "string"},
+            {label: "Publish Date", name: "date", widget: "datetime"},
+            {label: "Featured Image", name: "image", widget: "image", required: false},
+            {label: "Description", name: "description", widget: "text"},
+            {label: "Categories", name: "categories", widget: "list", required: false},
+            {label: "Tags", name: "tags", widget: "list", required: false},
+            {label: "Body", name: "body", widget: "markdown"}
+          ]
+        }]
+      }
+    });
+
+    // Handle Netlify Identity
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html> 
