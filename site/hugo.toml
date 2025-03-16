@@ -1,12 +1,32 @@
 baseurl = "/"
 languageCode = "en-us"
 languageLang = "en"
-title = "Kaldi"
+title = "Sarosh Mirza"
 
-# RSS, categories and tags disabled for an easy start
-# See configuration options for more details: 
-# https://gohugo.io/getting-started/configuration/#toml-configuration
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+# Enable taxonomies for blog categories
+disableKinds = ["RSS"]
 
 [params]
 images = ["img/og-image.jpg"]
+author = "Sarosh Mirza"
+email = "me@saroshmirza.com"
+phone = "+1-672-380-4521"
+description = "Product Manager with 12+ years of experience bridging technical and business strategies in high-growth SaaS environments."
+
+[menu]
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+[[menu.main]]
+name = "Blog"
+url = "/post/"
+weight = 2
+[[menu.main]]
+name = "Products"
+url = "/products/"
+weight = 3
+[[menu.main]]
+name = "Contact"
+url = "/contact/"
+weight = 4
