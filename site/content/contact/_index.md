@@ -14,12 +14,8 @@ You can also find me on:
 * [LinkedIn](https://linkedin.com/in/saroshmirza)
 * [GitHub](https://github.com/saroshmirza)
 
-We'd love to get in touch with you and hear your ideas and
-questions. We strive to grow and improve constantly and your feedback
-is valuable for us.
+Whether you're interested in discussing potential collaborations, technical challenges, or just want to connect, I'd love to hear from you. Your insights and feedback are always valuable to me.
 
-<h3 class="f4 b lh-title mb2">How can I get…?</h3>
+<h3 class="f4 b lh-title mb2">Get in Touch</h3>
 
-You can also use the form below for any inquiries about coffee
-availability, monthly subscriptions and scheduling a 1-on-1 session
-with our baristas. Don't be shy, drop us a line!
+Use the form below to send me a message. I'll get back to you as soon as possible.
